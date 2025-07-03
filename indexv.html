@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdom Nwosu - Volunteer Leadership</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #fff9f0 0%, #fff3e6 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(101, 67, 33, 0.8)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1951&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 5px solid #e67e22;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            padding: 0 20px;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid #e67e22;
+            background: linear-gradient(45deg, #8b4513, #d35400);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 70px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .name-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .name-title h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #f1c40f;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #f9e79f;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+            background: rgba(230, 126, 34, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+        }
+
+        .contact-item a {
+            color: #f1c40f;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f1c40f;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #8b4513, #d35400);
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            opacity: 0.05;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: #8b4513;
+            font-size: 2.4rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #e67e22;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #d35400;
+        }
+
+        .summary-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #5d4037;
+        }
+
+        .highlight {
+            color: #8b4513;
+            font-weight: 700;
+        }
+
+        .gold-highlight {
+            color: #d35400;
+            font-weight: 600;
+        }
+
+        .experience-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-item {
+            background: #fffaf0;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #e67e22;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1547981609-4b6bf67db7dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .experience-item > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .experience-item:hover {
+            background: #fff8e1;
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item h3 {
+            color: #8b4513;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .experience-item .organization {
+            color: #d35400;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .experience-item .date {
+            color: #7f8c8d;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .experience-item .location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .experience-item ul {
+            padding-left: 25px;
+        }
+
+        .experience-item li {
+            margin-bottom: 15px;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .experience-item li::before {
+            content: "•";
+            color: #e67e22;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            top: -2px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: #fffaf0;
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 5px solid #e67e22;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1934&q=80');
+            background-size: cover;
+            opacity: 0.05;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: #8b4513;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .skill-category h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #e67e22;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #f9e79f;
+            color: #8b4513;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-tag:hover {
+            background: #e67e22;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(to bottom right, #8b4513, #d35400);
+            color: white;
+            padding: 35px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.4s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-card i {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #f1c40f;
+        }
+
+        .stat-card .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 15px 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card .label {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .quote-section {
+            background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(101, 67, 33, 0.8)), url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote-section::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 180px;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .quote-author {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #f1c40f;
+        }
+
+        .cta-container {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            border-radius: 15px;
+            color: white;
+            margin: 50px 0;
+            box-shadow: 0 15px 30px rgba(230, 126, 34, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523289333742-be1143f6b766?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-subtitle {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #d35400;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: #f0f3f4;
+        }
+
+        footer {
+            background: #8b4513;
+            color: white;
+            text-align: center;
+            padding: 40px 25px;
+            margin-top: 40px;
+            border-top: 5px solid #e67e22;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .footer-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f1c40f;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+        }
+
+        .footer-item a {
+            color: #f1c40f;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-item a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .value-card {
+            background: #fffaf0;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid #f1c40f;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            background: #fff8e1;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            font-size: 3.5rem;
+            color: #d35400;
+            margin-bottom: 20px;
+        }
+
+        .value-title {
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .value-desc {
+            color: #5d4037;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .name-title h1 {
+                font-size: 2.4rem;
+            }
+            
+            .name-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .stat-card .number {
+                font-size: 2.2rem;
+            }
+            
+            .quote-text {
+                font-size: 1.4rem;
+            }
+            
+            header {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            footer {
+                clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <div class="name-title">
+                    <h1>Wisdom Nwosu</h1>
+                    <h2>Community Leader & Volunteer</h2>
+                </div>
+                <p class="tagline">Building stronger communities through dedicated service and compassionate leadership</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:wisdomchinwosu@gmail.com">wisdomchinwosu@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/wisdom-nwosu" target="_blank">linkedin.com/in/wisdom-nwosu</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+2347025286814">+234 7025 286 814</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="summary">
+            <h2 class="section-title">Volunteer Commitment</h2>
+            <div class="summary-content">
+                <p>My volunteer work represents a deep commitment to community building and service leadership. Through organized efforts and compassionate engagement, I've dedicated myself to creating positive change and empowering teams to achieve collective goals.</p>
+                
+                <p>As a District Zone Leader for The Church of Jesus Christ of Latter-Day Saints, I coordinated efforts across multiple areas, aligning initiatives to enhance community impact. This experience taught me that true leadership is about enabling others to reach their full potential while working toward shared objectives.</p>
+            </div>
+        </section>
+
+        <section id="stats">
+            <h2 class="section-title">Volunteer Impact</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="number">20%</div>
+                    <div class="label">Mission Improvement</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="number">15%</div>
+                    <div class="label">Productivity Increase</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-hands"></i>
+                    <div class="number">500+</div>
+                    <div class="label">Hours Served</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <div class="number">5+</div>
+                    <div class="label">Communities Served</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="values">
+            <h2 class="section-title">Core Values</h2>
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-title">Compassion</h3>
+                    <p class="value-desc">Empathy and understanding as the foundation of all service</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Collaboration</h3>
+                    <p class="value-desc">Working together to achieve greater collective impact</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-desc">Finding creative solutions to community challenges</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="value-title">Commitment</h3>
+                    <p class="value-desc">Dedication to long-term positive change</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Volunteer Experience</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <h3>District Zone Leader</h3>
+                    <div class="organization"><i class="fas fa-church"></i> The Church of Jesus Christ of Latter-Day Saints</div>
+                    <div class="date">2020 – 2022</div>
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Salt Lake City, Utah, USA</div>
+                    <ul>
+                        <li>Coordinated efforts across multiple districts/areas to ensure alignment in goals and initiatives</li>
+                        <li>Led to a <span class="gold-highlight">20% improvement</span> in overall mission effectiveness</li>
+                        <li>Organized and facilitated weekly meetings to review progress and discuss challenges</li>
+                        <li>Resulted in a <span class="gold-highlight">15% increase</span> in team productivity</li>
+                        <li>Mentored and supported team leaders in developing community outreach programs</li>
+                        <li>Developed conflict resolution strategies that improved team cohesion</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Community Outreach Volunteer</h3>
+                    <div class="organization"><i class="fas fa-hands-helping"></i> Local Community Services</div>
+                    <div class="date">2018 – 2020</div>
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Salt Lake City, Utah, USA</div>
+                    <ul>
+                        <li>Organized food drives serving 200+ families monthly</li>
+                        <li>Developed educational programs for underprivileged youth</li>
+                        <li>Coordinated neighborhood cleanup initiatives</li>
+                        <li>Facilitated community workshops on financial literacy</li>
+                        <li>Managed volunteer recruitment and training programs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="quote-section">
+            <p class="quote-text">"Wisdom's leadership transformed our volunteer efforts. His ability to coordinate diverse teams while maintaining focus on our mission was remarkable. Under his guidance, we achieved measurable improvements in both productivity and community impact."</p>
+            <p class="quote-author">- Volunteer Coordinator, The Church of Jesus Christ of Latter-Day Saints</p>
+        </div>
+
+        <section id="skills">
+            <h2 class="section-title">Volunteer Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Leadership & Coordination</h3>
+                    <div class="skills-list">
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Team Leadership</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Program Coordination</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Conflict Resolution</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Mentoring</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Event Planning</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Strategic Planning</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-comments"></i> Community Engagement</h3>
+                    <div class="skills-list">
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Community Outreach</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Public Speaking</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Cultural Sensitivity</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Needs Assessment</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Stakeholder Engagement</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Partnership Development</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-tasks"></i> Project Management</h3>
+                    <div class="skills-list">
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Volunteer Recruitment</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Resource Management</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Project Execution</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Performance Evaluation</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Budget Management</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Impact Assessment</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to Make a Difference Together?</h2>
+            <p class="cta-subtitle">Let's collaborate to create meaningful community impact through dedicated service</p>
+            <a href="mailto:wisdomchinwosu@gmail.com" class="cta-button">Join Me in Service</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-title">Connect With Me</h3>
+            <div class="footer-contact">
+                <div class="footer-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:wisdomchinwosu@gmail.com">wisdomchinwosu@gmail.com</a>
+                </div>
+                <div class="footer-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/wisdom-nwosu" target="_blank">LinkedIn</a>
+                </div>
+                <div class="footer-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+2347025286814">+234 7025 286 814</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Wisdom Nwosu | Community Leadership Portfolio
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation for elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.stat-card, .experience-item, .skill-category, .cta-container, .value-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
